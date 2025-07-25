@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Таймер</title>
+  <style>
+    #timer {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    button {
+      font-size: 1em;
+      padding: 10px 20px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="timer">00:00:00</div>
+
+<button onclick="startTimer()">Старт</button>
+<button onclick="stopTimer()">Стоп</button>
+<button onclick="resetTimer()">Скинути</button>
+
+<script>
+  let timerInterval;
+  let seconds = 0;
+
+  function updateDisplay() {
+    const hrs = String(Math.floor(seconds / 3600)).padStart(2, '0');
+    const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, '0');
+    const secs = String(seconds % 60).padStart(2, '0');
+    document.getElementById("timer").textContent = `${hrs}:${mins}:${secs}`;
+  }
+
+  function startTimer() {
+    if (timerInterval) return; // якщо вже запущено — не дублюємо
+    timerInterval = setInterval(() => {
+      seconds++;
+      updateDisplay();
+    }, 1000);
+  }
+
+  function stopTimer() {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+
+  function resetTimer() {
+    stopTimer();
+    seconds = 0;
+    updateDisplay();
+  }
+
+  // Ініціалізація
+  updateDisplay();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+/* #timer {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-family: monospace;
+  }
+button {
+font-size: 1em;
+padding: 10px 20px;
+margin: 5px;
+}
+ */
+
+/* result.css */
+
+/* Повний розмір, скидання відступів */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://cdn4.suspilne.media/images/c5cf72deaab888e5.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+/* Основний контейнер */
+.container, .content-block {
+    display: grid;
+    place-items: center;
+    background-color: yellow;
+    text-align: center;
+    padding: 30px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* Заголовки */
+h1, h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Абзаци */
+p {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+/* Таймер */
+#timer {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Кнопки */
+button {
+    all: unset;
+    background-color: #00e7ff;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s, background-color 0.3s;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #00c8dd;
+    transform: scale(1.05);
+}
+
+/* Контейнер для кнопок */
+.button-container {
+    margin-top: 30px;
+}
+
+/* Вивід логів */
+#log, #prh_output {
+    background-color: #fff;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: left;
+    border-radius: 10px;
+    max-width: 400px;
+    white-space: pre-wrap;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Адаптив для мобільних */
+@media (max-width: 600px) {
+    .container, .content-block {
+        padding: 20px;
+    }
+
+    h1, h2 {
+        font-size: 28px;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 12px 24px;
+    }
+
+    #timer {
+        font-size: 28px;
+    }
+
+    #log, #prh_output {
+        font-size: 16px;
+        width: 100%;
+    }
+}

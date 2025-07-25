@@ -1,0 +1,79 @@
+/* Центрування всієї сторінки */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("https://img.tsn.ua/cached/934/tsn-135859377404ec64163c97d964721c31/thumbs/1200x630/e2/3c/75e383811c5077947f1ca30c36a03ce2.jpeg"); /* 🔁 заміни на свою картинку */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Центрування */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Центральний блок */
+.container {
+    background-color: yellow;
+    text-align: center;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    width: fit-content;
+}
+
+/* Заголовок */
+.container h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* Форма */
+.players-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+/* Підписи */
+.form-label {
+    font-size: 24px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Поля вводу */
+.form-control {
+    font-size: 22px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 300px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Кнопка Відправити */
+input[type="submit"] {
+    background-color: #00e7ff;
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 18px 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #00c8dd;
+    transform: scale(1.05);
+}
+
+

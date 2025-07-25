@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Біатлон</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Біатлон</h1>
+
+    <!-- <div class="rows">
+      {% set all_names = [name1, name2, name3, name4] %}
+      {% for i, name in enumerate(all_names, start=1) %}
+        <div class="row">
+          <div class="label">{{ name }}</div>
+          <div class="button-group">
+            {% set middle = '0' if num_players < i else '' %}
+            <a href="{{ url_for('shooting', code=str(i) + middle + '1') }}">
+              <button type="button">лежка</button>
+            </a>
+            <a href="{{ url_for('shooting', code=str(i) + middle + '2') }}">
+              <button type="button">стійка</button>
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div> -->
+    <div class="rows">
+        {% set all_names = [name1, name2, name3, name4] %}
+        {% for name in all_names %}
+          {% set i = loop.index %}
+          <div class="row">
+            <div class="label">{{ name }}</div>
+            <div class="button-group">
+              {% set middle = '0' if num_players < i else '' %}
+              <a href="{{ url_for('shooting', code=str(i) + middle + '1') }}">
+                <button type="button">лежка</button>
+              </a>
+              <a href="{{ url_for('shooting', code=str(i) + middle + '2') }}">
+                <button type="button">стійка</button>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      
+      
+    <div class="bottom-buttons">
+      <a href="{{ url_for('hid') }}">
+        <button type="button" class="wide green">Хід</button>
+      </a>
+      <a href="{{ url_for('kinec') }}">
+        <button type="button" class="wide red">Кінець</button>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

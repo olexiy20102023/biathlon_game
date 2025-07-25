@@ -1,0 +1,149 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.body-empty {
+    background-image: url("https://glavcom.ua/img/article/9060/83_main-v1675370316.jpg");
+}
+.body-к {
+    background-image: url("https://sportnews.24tv.ua/resources/photos/news/202503/2787933.jpg?v=1743347224000&w=768&h=432&fit=cover&output=webp&q=70");
+}
+body[class^="body-"]:not(.body-к):not(.body-empty) {
+    background-image: url("https://pic.sport.ua/images/news/0/12/88/orig_497628.jpg");
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://cdn4.suspilne.media/images/c5cf72deaab888e5.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+/* Контейнер, в якому розміщено увесь текст і кнопки */
+.container {
+    background-color: rgba(255, 255, 0, 0.9); /* напівпрозорий жовтий */
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    width: 600px;
+}
+
+/* Заголовки */
+h1, h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Абзаци */
+p {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+/* Таймер */
+#timer {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Загальні стилі для кнопок */
+button {
+    all: unset;
+    background-color: #00e7ff;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s, background-color 0.3s;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #00c8dd;
+    transform: scale(1.05);
+}
+
+/* Група кнопок */
+.button-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Вивід логів і результатів */
+#log, #prh_output {
+    background-color: #fff;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: left;
+    border-radius: 10px;
+    max-width: 100%;
+    white-space: pre-wrap;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Контейнер для кнопки "назад" */
+.button-container {
+    margin-top: 30px;
+}
+
+
+a.btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #00e7ff;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s, background-color 0.3s;
+    margin: 10px;
+}
+
+a.btn:hover {
+    background-color: #00c8dd;
+    transform: scale(1.05);
+}
+
+
+/* Адаптивність */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1, h2 {
+        font-size: 28px;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 12px 24px;
+    }
+
+    #timer {
+        font-size: 28px;
+    }
+
+    #log, #prh_output {
+        font-size: 16px;
+    }
+}

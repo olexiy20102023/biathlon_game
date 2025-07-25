@@ -1,0 +1,21 @@
+<!-- {% extends "index.html"%}
+
+{% block body %} -->
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Кількість гравців</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='number_players.css') }}">
+</head>
+<div class="container">
+    <h1>Вибери число комп'ютерних гравців</h1>
+    <form method="post" class="button-group">
+        <button type="submit" name="players" value="1">1</button>
+        <button type="submit" name="players" value="2">2</button>
+        <button type="submit" name="players" value="3">3</button>
+        <button type="submit" name="players" value="4">4</button>
+    </form>
+</div>
+<!-- {% endblock %} -->

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Привітання</title>
+</head>
+<body>
+    <!-- <h1>Привіт, {{ kilkist }}!</h1> -->
+    {% if kilkist == "1" %}
+        <form method="post">
+            <input type="text" name="username" placeholder="Введіть ім'я" required>
+            <button type="submit">Відправити</button>
+        </form>
+        <!-- <p>Число дорівнює 1</p> -->
+        <p> {{ name1 }}</p>
+    {% else %}
+        <p>Число не 1, а {{ kilkist }}</p>
+    {% endif %}
+    
+</body>
+</html>

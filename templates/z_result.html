@@ -1,0 +1,139 @@
+<!-- <h1>shooting</h1>
+<p>Код вибору: {{ vybir }}</p> -->
+<!-- result.html -->
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+    {% if vybir != "101" and vybir != "102" and vybir != "201" and vybir != "202" and vybir != "301" and vybir != "302" %}
+        <h2>Результат</h2>
+        <p>Код вибору: {{ vybir }}</p>
+        <p>Результат ходу: {{ prh|safe }}</p>
+        <div class="button-container">
+            <a href="{{ url_for('menu', num_players=session.get('num_players')) }}">
+            <button>Назад до меню</button>
+            </a>
+        </div>
+    {% else %}
+        <div id="timer">00:00:00</div>
+
+        <button onclick="startTimer()">Старт</button>
+        <button onclick="stopTimer()">Стоп</button>
+        <button onclick="resetTimer()">Скинути</button>
+        
+        <!-- Кнопки 1–5 -->
+        <div style="margin-top: 20px;">
+        <button onclick="logButton(0)">Кнопка 0</button>
+        <button onclick="logButton(1)">Кнопка 1</button>
+        <button onclick="logButton(2)">Кнопка 2</button>
+        <button onclick="logButton(3)">Кнопка 3</button>
+        <button onclick="logButton(4)">Кнопка 4</button>
+        <button onclick="logButton(5)">Кнопка 5</button>
+        </div>
+
+        <pre id="log"></pre>
+        <!-- Виведення результатів -->
+        <div id="prh_output"></div>
+        
+
+        <div class="button-container">
+            <a href="{{ url_for('menu', num_players=session.get('num_players')) }}">
+            <button>Назад до меню</button>
+            </a>
+        </div>
+
+
+
+
+        <script>
+        let elapsedMs = 0;
+        let interval = null;
+        let lastTick = null;
+        
+        function formatTime(ms) {
+            const totalSeconds = ms / 1000;
+            const mins = String(Math.floor(totalSeconds / 60)).padStart(2, '0');
+            const secs = String(Math.floor(totalSeconds % 60)).padStart(2, '0');
+            const hundredths = String(Math.floor((ms % 1000) / 10)).padStart(2, '0');
+            return `${mins}:${secs}:${hundredths}`;
+        }
+        
+        function updateDisplay() {
+            document.getElementById("timer").textContent = formatTime(elapsedMs);
+        }
+        
+        function startTimer() {
+            if (interval) return;
+            lastTick = Date.now();
+            interval = setInterval(() => {
+            const now = Date.now();
+            elapsedMs += now - lastTick;
+            lastTick = now;
+            updateDisplay();
+            }, 10);
+        }
+        
+        function stopTimer() {
+            if (!interval) return;
+            clearInterval(interval);
+            interval = null;
+        
+            const secondsFloat = (elapsedMs / 1000).toFixed(2);
+        
+            fetch("/save_time", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ elapsed_time: parseFloat(secondsFloat) })
+            }).then(response => {
+            if (response.ok) {
+                alert("Час збережено: " + secondsFloat + " сек");
+            } else {
+                alert("Помилка при збереженні");
+            }
+            });
+        }
+        
+        function resetTimer() {
+            clearInterval(interval);
+            interval = null;
+            elapsedMs = 0;
+            updateDisplay();
+            document.getElementById("log").textContent = ""; // очищення логів
+        }
+        
+
+        function logButton(buttonNumber) {
+            fetch("/get_elapsed_time")
+            .then(response => response.json())
+            .then(data => {
+                const time = Math.round(data.elapsed_time || 0);
+
+                // Надсилаємо номер кнопки на сервер
+                fetch("/save_button", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ button: buttonNumber })
+                })
+                .then(res => res.json())
+                .then(result => {
+                if (result.status === "ok") {
+                    // Виводимо змінну prh на сторінку
+                    document.getElementById("prh_output").innerHTML = result.prh;
+                }
+                });
+            });
+        }
+
+
+        </script>
+        
+
+    
+        
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,208 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("../static/your_image.png"); 
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    background-color: yellow;
+    text-align: center;
+    padding: 40px;
+    width: fit-content;
+    margin: 100px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+button[type="submit"] {
+    all: unset;
+    background-color: #00e7ff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-size: 20px;
+    color: black;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+} */
+
+/* Загальні стилі */
+/* body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("../static/your_image.png"); /* 🔁 заміни на свою картинку */
+    /* background-size: cover; */
+    /* background-position: center;
+    background-repeat: no-repeat;
+} */
+
+/* Центральний блок */
+/* .container {
+    background-color: yellow;
+    text-align: center;
+    padding: 20px;
+    width: 80%;
+    height: 100%;
+    margin: auto auto;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+} */
+
+/* Заголовок */
+/* .container h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+} */
+
+/* Група кнопок */
+/* .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+} */
+
+/* Стилі для кнопок */
+/* button[type="submit"] {
+    all: unset;
+    background-color: #00e7ff;
+    padding: 30px 60px;
+    border-radius: 12px;
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s, background-color 0.3s;
+} */
+
+/* Ефект при наведенні */
+/* button[type="submit"]:hover {
+    background-color: #00c8dd;
+    transform: scale(1.05);
+} */
+
+/* Адаптив для мобільних */
+/* @media (max-width: 600px) {
+    .container {
+        padding: 30px;
+    }
+
+    .container h1 {
+        font-size: 28px;
+    }
+
+    button[type="submit"] {
+        font-size: 28px;
+        padding: 20px 40px;
+    }
+
+    .button-group {
+        gap: 20px;
+    }
+} */ 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center; /* центр по горизонталі */
+    align-items: center;     /* центр по вертикалі */
+    background-image: url("https://cdn4.suspilne.media/images/c5cf72deaab888e5.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+/* Центральний блок */
+.container {
+    display: grid;
+    place-items: center;
+    background-color: yellow;
+    text-align: center;
+    padding: 20px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+/* Заголовок */
+.container h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* Група кнопок */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 8%;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+/* Стилі для кнопок */
+button[type="submit"] {
+    all: unset;
+    background-color: #00e7ff;
+    padding: 20px 40px;       /* було 30px 60px */
+    border-radius: 10px;      /* трохи менше */
+    font-size: 28px;          /* було 36px */
+    font-weight: bold;
+    color: black;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+/* Ефект при наведенні */
+button[type="submit"]:hover {
+    background-color: #00c8dd;
+    transform: scale(1.05);
+}
+
+/* Адаптив для мобільних */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px;
+    }
+
+    .container h1 {
+        font-size: 28px;
+    }
+
+    button[type="submit"] {
+        font-size: 28px;
+        padding: 20px 40px;
+    }
+
+    .button-group {
+        gap: 20px;
+    }
+}
+

@@ -1,0 +1,277 @@
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вибір кількості гравців</title>
+    <link rel="stylesheet" 
+    href= "{{ url_for( 'static', filename = 'player_names.css') }}">
+</head>
+
+<div class="container">
+    <h1>Впишіть, будь ласка, імена комп'ютерних гравців</h1>
+    {% include "errors.html" %}
+    {% if num_players == "1" %}
+        <!-- <form method="POST" class="players-container">
+            <label for="login1" class="form-label">Обери з варіантів імя компютерного гравця:</label>
+            <select name="login1" id="login1" class="form-control" required>
+                <option value="" disabled selected>-- Оберіть ім'я --</option>
+                <option value="Артем">Артем</option>
+                <option value="Олексій">Олексій</option>
+                <option value="Марія">Марія</option>
+                <option value="Гравець 1">Гравець 1</option>
+            </select> -->
+        <form method="POST" class="players-container">
+            <label for="login1" class="form-label">Обери з варіантів імя компютерного гравця:</label>
+            <select name="login1" id="login1" class="form-control" required>
+                <option value="" disabled selected>-- Оберіть ім'я --</option>
+                <option value="Артем" data-index="1">Артем</option>
+                <option value="Олексій" data-index="2">Олексій</option>
+                <option value="Марія" data-index="3">Марія</option>
+                <option value="Гравець 1" data-index="4">Гравець 1</option>
+            </select>
+            <input type="hidden" name="gravetc1" id="gravetc1">
+            
+
+
+
+            <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const select = document.getElementById("login1");
+                const hiddenInput = document.getElementById("gravetc1");
+            
+                select.addEventListener("change", function () {
+                    const selectedOption = select.options[select.selectedIndex];
+                    hiddenInput.value = selectedOption.getAttribute("data-index");
+                });
+            });
+            </script>
+
+
+            <div>
+                <label for="login2" class="form-label">Введи імя першого справжнього гравця</label>
+                <input type="text" name="login2" id="login2" class="form-control" value="{{request.form['login']}}">
+            </div>
+            <div>
+                <label for="login3" class="form-label">Введи імя другого справжнього гравця</label>
+                <input type="text" name="login3" id="login3" class="form-control" value="{{request.form['login']}}">
+            </div>
+            <div>
+                <label for="login4" class="form-label">Введи імя третього справжнього гравця</label>
+                <input type="text" name="login4" id="login4" class="form-control" value="{{request.form['login']}}">
+            </div>
+            <div>
+                <input type="submit" value="Відправити">
+            </div>
+        </form>
+    
+    {% endif %}
+    {% if num_players == "2" %}
+    <form method="POST" class="players-container">
+        <label for="login1" class="form-label">Обери з варіантів імя компютерного гравця:</label>
+        <select name="login1" id="login1" class="form-control" required>
+            <option value="" disabled selected>-- Оберіть ім'я --</option>
+            <option value="Артем" data-index="1">Артем</option>
+            <option value="Олексій" data-index="2">Олексій</option>
+            <option value="Марія" data-index="3">Марія</option>
+            <option value="Гравець 1" data-index="4">Гравець 1</option>
+        </select>
+        <input type="hidden" name="gravetc1" id="gravetc1">
+
+
+        <label for="login2" class="form-label">Обери з варіантів імя компютерного гравця:</label>
+        <select name="login2" id="login2" class="form-control" required>
+            <option value="" disabled selected>-- Оберіть ім'я --</option>
+            <option value="Іван" data-index="1">Іван</option>
+            <option value="Олег" data-index="2">Олег</option>
+            <option value="Таня" data-index="3">Таня</option>
+            <option value="Гравець 2" data-index="4">Гравець 2</option>
+        </select>
+        <input type="hidden" name="gravetc2" id="gravetc2">
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Гравець 1
+                const select1 = document.getElementById("login1");
+                const hiddenInput1 = document.getElementById("gravetc1");
+            
+                select1.addEventListener("change", function () {
+                    const selectedOption = select1.options[select1.selectedIndex];
+                    hiddenInput1.value = selectedOption.getAttribute("data-index");
+                });
+            
+                // Гравець 2
+                const select2 = document.getElementById("login2");
+                const hiddenInput2 = document.getElementById("gravetc2");
+            
+                select2.addEventListener("change", function () {
+                    const selectedOption = select2.options[select2.selectedIndex];
+                    hiddenInput2.value = selectedOption.getAttribute("data-index");
+                });
+            });
+        </script>
+
+
+        <div>
+            <label for="login3" class="form-label">Введи імя першого справжнього гравця</label>
+            <input type="text" name="login3" id="login3" class="form-control" value="{{request.form['login']}}">
+        </div>
+        <div>
+            <label for="login4" class="form-label">Введи імя другого справжнього гравця</label>
+            <input type="text" name="login4" id="login4" class="form-control" value="{{request.form['login']}}">
+        </div>
+        <div>
+            <input type="submit" value="Відправити">
+        </div>
+    </form>
+    {% endif %}
+    {% if num_players == "3" %}
+        <!-- Гравець 1 -->
+        <form method="POST" class="players-container">
+            <label for="login1" class="form-label">Обери з варіантів імя компютерного гравця:</label>
+            <select name="login1" id="login1" class="form-control" required>
+                <option value="" disabled selected>-- Оберіть ім’я --</option>
+                <option value="Артем" data-index="1">Артем</option>
+                <option value="Олексій" data-index="2">Олексій</option>
+                <option value="Марія" data-index="3">Марія</option>
+                <option value="Гравець 1" data-index="4">Гравець 1</option>
+            </select>
+            <input type="hidden" name="gravetc1" id="gravetc1">
+        
+
+        <!-- Гравець 2 -->
+            <div>
+                <label for="login2" class="form-label">Обери з варіантів імя компютерного гравця:</label>
+                <select name="login2" id="login2" class="form-control" required>
+                    <option value="" disabled selected>-- Оберіть ім’я --</option>
+                    <option value="Іван" data-index="1">Іван</option>
+                    <option value="Олег" data-index="2">Олег</option>
+                    <option value="Таня" data-index="3">Таня</option>
+                    <option value="Гравець 2" data-index="4">Гравець 2</option>
+                </select>
+                <input type="hidden" name="gravetc2" id="gravetc2">
+            </div>
+
+            <!-- Гравець 3 -->
+            <div>
+                <label for="login3" class="form-label">Обери з варіантів імя компютерного гравця:</label>
+                <select name="login3" id="login3" class="form-control" required>
+                    <option value="" disabled selected>-- Оберіть ім’я --</option>
+                    <option value="Юлія" data-index="1">Юлія</option>
+                    <option value="Назар" data-index="2">Назар</option>
+                    <option value="Катерина" data-index="3">Катерина</option>
+                    <option value="Гравець 3" data-index="4">Гравець 3</option>
+                </select>
+                <input type="hidden" name="gravetc3" id="gravetc3">
+            </div>
+            
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    function syncSelectWithHidden(selectId, hiddenId) {
+                        const select = document.getElementById(selectId);
+                        const hidden = document.getElementById(hiddenId);
+                
+                        select.addEventListener("change", function () {
+                            const selectedOption = select.options[select.selectedIndex];
+                            hidden.value = selectedOption.getAttribute("data-index");
+                        });
+                    }
+                
+                    syncSelectWithHidden("login1", "gravetc1");
+                    syncSelectWithHidden("login2", "gravetc2");
+                    syncSelectWithHidden("login3", "gravetc3");
+                });
+            </script>
+
+
+            <div>
+                <label for="login4" class="form-label">Введи імя справжнього гравця</label>
+                <input type="text" name="login4" id="login4" class="form-control" value="{{request.form['login']}}">
+            </div>
+            <div>
+                <input type="submit" value="Відправити">
+            </div>
+        </form>
+    {% endif %}
+    {% if num_players == "4" %}
+        <form method="POST" class="players-container">
+            <!-- Гравець 1 -->
+            <div>
+                <label for="login1" class="form-label">Обери з варіантів імя компютерного гравця:</label>
+                <select name="login1" id="login1" class="form-control" required>
+                    <option value="" disabled selected>-- Оберіть ім’я --</option>
+                    <option value="Артем" data-index="1">Артем</option>
+                    <option value="Олексій" data-index="2">Олексій</option>
+                    <option value="Марія" data-index="3">Марія</option>
+                    <option value="Гравець 1" data-index="4">Гравець 1</option>
+                </select>
+                <input type="hidden" name="gravetc1" id="gravetc1">
+            </div>
+
+            <!-- Гравець 2 -->
+            <div>
+                <label for="login2" class="form-label">Обери з варіантів імя компютерного гравця:</label>
+                <select name="login2" id="login2" class="form-control" required>
+                    <option value="" disabled selected>-- Оберіть ім’я --</option>
+                    <option value="Іван" data-index="1">Іван</option>
+                    <option value="Олег" data-index="2">Олег</option>
+                    <option value="Таня" data-index="3">Таня</option>
+                    <option value="Гравець 2" data-index="4">Гравець 2</option>
+                </select>
+                <input type="hidden" name="gravetc2" id="gravetc2">
+            </div>
+
+            <!-- Гравець 3 -->
+            <div>
+                <label for="login3" class="form-label">Обери з варіантів імя компютерного гравця:</label>
+                <select name="login3" id="login3" class="form-control" required>
+                    <option value="" disabled selected>-- Оберіть ім’я --</option>
+                    <option value="Юлія" data-index="1">Юлія</option>
+                    <option value="Назар" data-index="2">Назар</option>
+                    <option value="Катерина" data-index="3">Катерина</option>
+                    <option value="Гравець 3" data-index="4">Гравець 3</option>
+                </select>
+                <input type="hidden" name="gravetc3" id="gravetc3">
+            </div>
+
+            <!-- Гравець 4 -->
+            <div>
+                <label for="login4" class="form-label">Обери з варіантів імя компютерного гравця:</label>
+                <select name="login4" id="login4" class="form-control" required>
+                    <option value="" disabled selected>-- Оберіть ім’я --</option>
+                    <option value="Ірина" data-index="1">Ірина</option>
+                    <option value="Богдан" data-index="2">Богдан</option>
+                    <option value="Дарина" data-index="3">Дарина</option>
+                    <option value="Гравець 4" data-index="4">Гравець 4</option>
+                </select>
+                <input type="hidden" name="gravetc4" id="gravetc4">
+            </div>
+
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    function syncSelectWithHidden(selectId, hiddenId) {
+                        const select = document.getElementById(selectId);
+                        const hidden = document.getElementById(hiddenId);
+                
+                        select.addEventListener("change", function () {
+                            const selectedOption = select.options[select.selectedIndex];
+                            hidden.value = selectedOption.getAttribute("data-index");
+                        });
+                    }
+                
+                    syncSelectWithHidden("login1", "gravetc1");
+                    syncSelectWithHidden("login2", "gravetc2");
+                    syncSelectWithHidden("login3", "gravetc3");
+                    syncSelectWithHidden("login4", "gravetc4");
+                });
+                </script>
+                
+
+
+            <!-- Кнопка -->
+            <div>
+                <input type="submit" value="Відправити">
+            </div>
+        </form>
+    {% endif %}
+</div>

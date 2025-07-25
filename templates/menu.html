@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Біатлон</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+</head>
+<body>
+  <div class="container">
+
+    <div class="rows">
+      {% if num_players == 1 %}
+        <div class="row">
+          <div class="label">{{ name1 }}</div>
+          <div class="button-group">
+            <a href="{{ url_for('result', code='11') }}"><button type="button">лежка</button></a>
+            <a href="{{ url_for('result', code='12') }}"><button type="button">стійка</button></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="label">{{ name2 }}</div>
+          <div class="button-group">
+            <a href="{{ url_for('result', code='101') }}"><button type="button">лежка</button></a>
+            <a href="{{ url_for('result', code='102') }}"><button type="button">стійка</button></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="label">{{ name3 }}</div>
+          <div class="button-group">
+            <a href="{{ url_for('result', code='201') }}"><button type="button">лежка</button></a>
+            <a href="{{ url_for('result', code='202') }}"><button type="button">стійка</button></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="label">{{ name4 }}</div>
+          <div class="button-group">
+            <a href="{{ url_for('result', code='301') }}"><button type="button">лежка</button></a>
+            <a href="{{ url_for('result', code='302') }}"><button type="button">стійка</button></a>
+          </div>
+        </div>
+    
+      {% elif num_players == 2 %}
+        <div class="row">
+          <div class="label">{{ name1 }}</div>
+          <div class="button-group">
+            <a href="{{ url_for('result', code='11') }}"><button type="button">лежка</button></a>
+            <a href="{{ url_for('result', code='12') }}"><button type="button">стійка</button></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="label">{{ name2 }}</div>
+          <div class="button-group">
+            <a href="{{ url_for('result', code='21') }}"><button type="button">лежка</button></a>
+            <a href="{{ url_for('result', code='22') }}"><button type="button">стійка</button></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="label">{{ name3 }}</div>
+          <div class="button-group">
+            <a href="{{ url_for('result', code='101') }}"><button type="button">лежка</button></a>
+            <a href="{{ url_for('result', code='102') }}"><button type="button">стійка</button></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="label">{{ name4 }}</div>
+          <div class="button-group">
+            <a href="{{ url_for('result', code='201') }}"><button type="button">лежка</button></a>
+            <a href="{{ url_for('result', code='202') }}"><button type="button">стійка</button></a>
+          </div>
+        </div>
+    
+      {% elif num_players == 3 %}
+        <div class="row">
+          <div class="label">{{ name1 }}</div>
+          <div class="button-group">
+            <a href="{{ url_for('result', code='11') }}"><button type="button">лежка</button></a>
+            <a href="{{ url_for('result', code='12') }}"><button type="button">стійка</button></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="label">{{ name2 }}</div>
+          <div class="button-group">
+            <a href="{{ url_for('result', code='21') }}"><button type="button">лежка</button></a>
+            <a href="{{ url_for('result', code='22') }}"><button type="button">стійка</button></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="label">{{ name3 }}</div>
+          <div class="button-group">
+            <a href="{{ url_for('result', code='31') }}"><button type="button">лежка</button></a>
+            <a href="{{ url_for('result', code='32') }}"><button type="button">стійка</button></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="label">{{ name4 }}</div>
+          <div class="button-group">
+            <a href="{{ url_for('result', code='101') }}"><button type="button">лежка</button></a>
+            <a href="{{ url_for('result', code='102') }}"><button type="button">стійка</button></a>
+          </div>
+        </div>
+    
+      {% elif num_players == 4 %}
+        <div class="row">
+          <div class="label">{{ name1 }}</div>
+          <div class="button-group">
+            <a href="{{ url_for('result', code='11') }}"><button type="button">лежка</button></a>
+            <a href="{{ url_for('result', code='12') }}"><button type="button">стійка</button></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="label">{{ name2 }}</div>
+          <div class="button-group">
+            <a href="{{ url_for('result', code='21') }}"><button type="button">лежка</button></a>
+            <a href="{{ url_for('result', code='22') }}"><button type="button">стійка</button></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="label">{{ name3 }}</div>
+          <div class="button-group">
+            <a href="{{ url_for('result', code='31') }}"><button type="button">лежка</button></a>
+            <a href="{{ url_for('result', code='32') }}"><button type="button">стійка</button></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="label">{{ name4 }}</div>
+          <div class="button-group">
+            <a href="{{ url_for('result', code='41') }}"><button type="button">лежка</button></a>
+            <a href="{{ url_for('result', code='42') }}"><button type="button">стійка</button></a>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    
+    <div class="bottom-buttons">
+      <!-- <a href="{{ url_for('result', vybir='') }}"><button>Хід</button></a>
+      <a href="{{ url_for('result', vybir='к') }}"><button>Кінець</button></a> -->
+      <a href="{{ url_for('result', code='') }}"><button>Хід</button></a>
+      <a href="{{ url_for('result', code='к') }}"><button>Кінець</button></a>
+
+    </div>
+  </div>
+</body>
+</html>

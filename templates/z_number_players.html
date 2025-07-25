@@ -1,0 +1,16 @@
+{% extends "index.html"%}
+
+{% block body %}
+<div class="container">
+    <h1>Вибери число комп'ютерних гравців</h1>
+    <form method="POST" class="players-container">
+        <select class="selectplayer" name="players">
+            <option value="1">Один гравець</option>
+            <option value="2">Два гравці</option>
+            <option value="3">Три гравці</option>
+            <option value="4">Чотири гравці</option>
+        </select>
+        <button type="submit">Відправити</button>
+    </form>
+</div>
+{% endblock %}

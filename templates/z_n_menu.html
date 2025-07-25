@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+  <html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <title>Біатлон</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+  </head>
+  <body>
+    <div class="container">
+  
+      <!-- Ряди імен + кнопки -->
+      <div class="rows">
+        <div class="row">
+          <div class="label">{{ name1 }}</div>
+          <div class="button-group">
+            <button type="submit">лежка</button>
+            <button type="submit">стійка</button>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="label">{{ name2 }}</div>
+          <div class="button-group">
+            <button type="submit">лежка</button>
+            <button type="submit">стійка</button>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="label">{{ name3 }}</div>
+          <div class="button-group">
+            <button type="submit">лежка</button>
+            <button type="submit">стійка</button>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="label">{{ name4 }}</div>
+          <div class="button-group">
+            <button type="submit">лежка</button>
+            <button type="submit">стійка</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Нижні великі кнопки -->
+      <div class="bottom-buttons">
+        <button type="submit" class="wide green">Хід</button>
+        <button type="submit" class="wide red">Кінець</button>
+      </div>
+    </div>
+  </body>
+  </html>
+  
