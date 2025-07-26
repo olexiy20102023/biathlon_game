@@ -30,6 +30,9 @@
             <div class="button-container">
                 <a href="{{ url_for('menu', num_players=session.get('num_players')) }}" class="btn">Назад до меню</a>
             </div>
+            <form action="/reset" method="post">
+                <button type="submit">Хід</button>
+            </form>
             <!-- <div class="button-container">
                 <a href="{{ url_for('menu', num_players=session.get('num_players')) }}">
                     <button>Назад до меню</button>
@@ -46,12 +49,12 @@
             </div>
 
             <div class="button-group">
-                <button onclick="logButton(0)">Кнопка 0</button>
-                <button onclick="logButton(1)">Кнопка 1</button>
-                <button onclick="logButton(2)">Кнопка 2</button>
-                <button onclick="logButton(3)">Кнопка 3</button>
-                <button onclick="logButton(4)">Кнопка 4</button>
-                <button onclick="logButton(5)">Кнопка 5</button>
+                <button onclick="logButton(0)">0</button>
+                <button onclick="logButton(1)">1</button>
+                <button onclick="logButton(2)">2</button>
+                <button onclick="logButton(3)">3</button>
+                <button onclick="logButton(4)">4</button>
+                <button onclick="logButton(5)">5</button>
             </div>
 
             <pre id="log"></pre>
@@ -61,6 +64,9 @@
                 <div class="button-container">
                     <a href="{{ url_for('menu', num_players=session.get('num_players')) }}" class="btn">Назад до меню</a>
                 </div>
+                <form action="/reset" method="post">
+                    <button type="submit">Хід</button>
+                </form>
                 <!-- <a href="{{ url_for('menu', num_players=session.get('num_players')) }}">
                     <button>Назад до меню</button>
                 </a> -->

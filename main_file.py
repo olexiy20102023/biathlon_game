@@ -1355,6 +1355,12 @@ def save_button():
 
 
 
+@app.route('/reset', methods=['POST'])
+def reset():
+    global vybir, prh
+    vybir = ""
+    prh = ""
+    return redirect(url_for('result'))
 
 
 
