@@ -736,12 +736,18 @@ def perevirka(gravetc, nomer1_4):
 
 @app.route('/', methods=['GET', 'POST'])
 # def home():
-def home():
-    return render_template('number_players.html')
+# def home():
+#     return render_template('number_players.html')
     # твоя логіка
     # return render_template('index.html')
     # return "Головна сторінка працює!"
-@app.route('/index', methods=['GET', 'POST'])
+
+
+
+
+
+# @app.route('/index', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     # print("wkfofas")
     global num_players, prh, vsi_promahy1, vsi_promahy2, vsi_promahy3, vsi_promahy4, promahy1, promahy2 ,promahy3 ,promahy4
