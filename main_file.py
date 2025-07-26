@@ -736,6 +736,8 @@ def perevirka(gravetc, nomer1_4):
 
 @app.route('/', methods=['GET', 'POST'])
 # def home():
+def home():
+    return render_template('number_players.html')
     # твоя логіка
     # return render_template('index.html')
     # return "Головна сторінка працює!"
