@@ -302,7 +302,7 @@ def strilba(tochnist, shvydkosrilnist):
 
 def nasha_strilba(gravetc):
     global promahy, prh
-    plus=(30-elapsed_time)/2
+    plus=(30-elapsed_time)/5
     plus=float(plus)
     plus=round(plus)
     prh+="Стрільба "+gravetc+":"
