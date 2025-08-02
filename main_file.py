@@ -31,30 +31,30 @@ def add_header(response):
 
 
 #staty
-name1="Bio"
-shvydkosrilnist11 = 65
-shvydkosrilnist12 = 70
-tochnist11 = 92
-tochnist12 = 83
-shvydkist1 = 70
-name2="Lagreid"
-shvydkosrilnist21 = 70
-shvydkosrilnist22 = 75
-tochnist21 = 97
-tochnist22 = 89
-shvydkist2 = 65
-name3="3"
-shvydkosrilnist31 = 80
-shvydkosrilnist32 = 80
-tochnist31 = 80
-tochnist32 = 80
-shvydkist3 = 80
-name4="4"
-shvydkosrilnist41 = 80
-shvydkosrilnist42 = 80
-tochnist41 = 80
-tochnist42 = 80
-shvydkist4 = 80
+name1="Легрейд"
+shvydkosrilnist11 = 61
+shvydkosrilnist12 = 65
+tochnist11 = 95
+tochnist12 = 90
+shvydkist1 = 61
+name2="Перро"
+shvydkosrilnist21 = 68
+shvydkosrilnist22 = 72
+tochnist21 = 87
+tochnist22 = 93
+shvydkist2 = 59
+name3="Самуельссон"
+shvydkosrilnist31 = 66
+shvydkosrilnist32 = 70
+tochnist31 = 89
+tochnist32 = 78
+shvydkist3 = 64
+name4="Фійон-Має"
+shvydkosrilnist41 = 63
+shvydkosrilnist42 = 68
+tochnist41 = 79
+tochnist42 = 87
+shvydkist4 = 65
 name5="5"
 shvydkosrilnist51 = 80
 shvydkosrilnist52 = 80
@@ -270,7 +270,7 @@ def strilba(tochnist, shvydkosrilnist):
         result31 = result31 - randint(1,5)
     if result31>40 and result31 < 45 and b < 1:
         result31 = result31 - randint(1,5)
-    plus1=(30-result31)/7
+    plus1=(30-result31)/5
     plus1=float(plus1)
     plus1=round(plus1)
     prh+="<br>"+"Швидкострільність - "+str(result31)
